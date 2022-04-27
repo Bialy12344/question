@@ -9,6 +9,7 @@ class Question(models.Model):
     pub_date = models.DateTimeField('date published')
     title = models.CharField(max_length=200)
     text = models.TextField()
+    is_active = models.BooleanField(default=True)
     def publish(self):
         self.published_date = timezone.now()
         self.save()
